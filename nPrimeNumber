@@ -1,0 +1,44 @@
+/**
+
+  Exercise: output the n prime number
+
+**/
+
+int main{
+    int number;
+    cin >> number;
+    
+    int prime_position = 0;
+    int factors;
+
+    // checks the numbers if they are prime
+    for(int i = 2; i < 8000; i++){
+        // resets factors back to 0 if the number is not prime
+        factors = 0;
+
+        // increments factors if the statement is true
+        for(int y = 1; y <= i; y++){
+            if(i % y == 0){
+                factors++;
+            }
+        }
+        
+        // if the factors equals to 2, then the number is prime
+        // increments prime_position
+        if (factors == 2){
+        prime_position++;
+        }
+        
+        // if the prime_position is equal to the number inputed by the user
+        // it prints the prime number and breaks out of the loop
+        if (prime_position == number){
+
+        cout << i;
+        break;
+
+        }
+
+    }
+
+
+}
