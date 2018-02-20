@@ -1,0 +1,22 @@
+/**
+
+  Exercise: output the sum of S=1+1*2+1*2*3+...+1*2*...*n.
+  Example: 4 - > 1+1*2+1*2*3+1*2*3*4
+**/
+
+int main(){
+    
+    int n, sum = 1, sum2 = 0;
+    cin >> n;
+
+    for(int i = n; i >= 1; i--){
+        for(int y = i; y >= 1; y--){
+            sum *= y;
+        }
+    
+        sum2 += sum;
+        sum = 1;
+    }
+
+    cout << sum2;
+}
