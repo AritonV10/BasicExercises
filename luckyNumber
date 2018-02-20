@@ -28,7 +28,7 @@ int Norocos(){
         // if we have the number 3, 3 x 3 = 9;
         // it stars from 1, so it checks
         // 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9...+1000
-        // it adds the number into the sum everytime and it checks after every iterating
+        // it adds the number into the sum everytime and it checks after every iteration
         // so sum at the first iterating would be, sum = 1 -> sum = 3 - > sum = 6 etc
         // and it adds the numbers into the array in case the sum is equal to sum2, so we have the numbers
         // to make this faster, we could stop the iterating if the sum is bigger than sum2
