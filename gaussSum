@@ -1,0 +1,40 @@
+/**
+  *Exercise: Tom calculated the sum of all numbers smaller or equal to n and his friend the sum of all numbers smaller or equal to m
+  *Their teacher did (sum_n - sum_m) and got the number S
+  *For a given number S. Find all the pairs (n,m) with n>m, writing them from biggest to smaller 
+  *Example: S: 10
+  *Pairs: 10 9
+  *Pairs 4 0
+  *( 0+1+2+...+10 )-( 0+1+2+...+9 )=10 , and (0+1+2+3+4)-0=10.
+  *Restriction: 1 ≤ S ≤ 2.000.000.000
+**/
+
+
+
+int main(){
+    long long a, sumi, sumj;
+    cin >> a;
+    long long j = a;
+    long long k = 1;
+
+    for(long long i = a; i >= 0; i--){
+        sumi = (i*(i+1))/2;
+        sumj = (j*(j+1))/2;
+
+        if(sumi - sumj > a){
+            continue;
+        }
+        if(sumj - sumi == a){
+            cout << j << " " << i << " \n";
+            }
+        if(i == 0){
+            i = a - k;
+            k++;
+            j--;
+        }
+        if(j == 0){
+            break;
+        }
+    }
+
+}
