@@ -1,0 +1,35 @@
+/**
+
+    Exercise: flip a number (1234 => 4321);
+  
+**/
+#include <iostream>
+using namcespace std;
+
+int main(){
+
+    int number;
+    int remainder, flippedNumber = 0;
+    
+    // input the number to be flipped
+    cin >> number;
+
+ 
+    while ( number >= 0){
+
+        // remainder is assign the last digit of number
+        // if the number is 1234, then remainder = 4
+        remainder = number % 10;
+       
+        // will be assigned the last digit of number(remainder)
+        // will multiply the current value with 10 so it adds a 0 at the end
+        // then add the remainder to it's current value
+        flippedNumber = flippedNumber * 10 + remainder;
+        
+        // divide the number by 10 so we can remove the last digit
+        number /= 10;
+    }
+
+    cout << flippedNumber;
+
+}
