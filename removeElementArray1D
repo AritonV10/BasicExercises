@@ -1,0 +1,43 @@
+/**
+
+  Exercise: remove an element from the array
+
+**/
+
+
+int main(){
+
+
+    int N;
+    cin >> N;
+    int v[N];
+
+    // add the numbers into the array
+    for(int i = 1; i <= N; i++){
+        cin >> v[i];
+    }
+
+    // the position we want to remove from the array
+    int n;
+    cin >> n;
+
+    // the loop starts from the we want to remove the number
+    // then switches i with i + 1
+    // example, we have an array with 6 elements and we want to remove the 3rd element
+    // (1,2,3,4,5,6 = > 1,2,4,3,5,6 => 1,2,4,5,3,6 => 1,2,4,5,6,3)
+    for(int i = n; i <= N; i++){
+        v[i] = v[i + 1];
+    }
+    
+    // when the loop is done, means the element is at the end of the array
+    // which means we can decrement the array length by 1, this way we remove
+    // the last element, which is the number we wanted to remove
+    N--;
+
+    for(int i = 1; i <= N; i++){
+        cout << v[i] << " ";
+    }
+
+
+
+}
