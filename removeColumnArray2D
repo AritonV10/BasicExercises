@@ -1,0 +1,53 @@
+/**
+
+  Exercise: remove the given column from an array;
+
+**/
+
+int main(){
+
+    int L, C, K;
+    cin >> L >> C >> K;
+    int v[500][500];
+
+    // L = line
+    // C = column
+    // K = the column we want to remove;
+
+
+    // add numbers into the array
+    for(int i = 1; i <= L; i++){
+        for(int j = 1; j <= C; j++){
+
+            cin>>v[i][j];
+        }
+    }
+
+    // the outer loop stars from i to L
+    // the inner loop starts from the column we want to remove to C
+    // it moves the element from the column we want to remove to the last column
+    // it does this for every line
+    // at the end we remove the column
+    for(int i = 1; i <= L; i++){
+        for(int y = K; y <= C; y++){
+                int temp = v[i][y];
+                v[i][y] = v[i][y + 1];
+                v[i][y + 1] = temp;
+            }
+
+    }
+    // decrementing the column size, which means removing the last column
+    C--;
+
+
+    // printing the new array with the column removed
+    for(int i = 1; i <= L; i++){
+        for(int j = 1; j <= C; j++){
+
+            cout << v[i][j] << " ";
+        }
+            cout << " \n";
+    }
+
+
+}
