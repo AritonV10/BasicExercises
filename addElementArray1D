@@ -1,0 +1,47 @@
+/**
+
+  Exercise: add a number into an array at the given position
+
+**/
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int N;
+    cin >> N;
+    int v[N];
+
+    // add the numbers into the array
+    for(int i = 1; i <= N; i++){
+        cin >> v[i];
+    }
+    
+    // increase the length of the array by 1 and assign the last position 0
+    N++;
+    v[N] = 0;
+    // input the number and the position to add the number
+    int n, p;
+    cin >> p >> n;
+    
+    // run the loop from the last position to the position we wanna add the number
+    // and switch the the element in the position i with i - 1
+    // for example, if we have an array of 6 (1,2,3,4,5,6) elements and we want to add the number 11
+    // on position 3, then we increase the length of the array by 1 and assign the last position (position 7)
+    // the value 0, then we switch i with i - 1 (1,2,3,4,0,6 => 1,2,3,4,0,5,6 => 1,2,3,0,4,5,6 = > 1,2,0,3,4,5,6)
+ 
+    for (int i = N; i > p; i--){
+        v[i] = v[i - 1];
+    }
+
+    // add the value
+    v[p] = n;
+
+     for(int i = 1; i <= N; i++){
+        cout << v[i] << " ";
+    }
+
+
+    }
