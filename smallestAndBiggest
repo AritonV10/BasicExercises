@@ -1,0 +1,41 @@
+/**
+	
+	Exercise: print the smallest number and the biggest (the numbers > 100);
+	
+**/
+
+#include <iostream>
+using namespace std;
+
+int main{
+    int numbers;
+    int n_max, n_min, n;
+    n_max = -99;
+    n_min = 99;
+
+    cin >> numbers;   // how many numbers to input
+
+    for(int i = 1; i <= number; i++){
+        // the numbers
+        cin >> n;     
+
+        // assigning the first number to the variable n_min
+        // if n = 20 => n_min = 20;
+        if(n < n_min){
+            n_min = n;
+        }
+        
+        // assigning the second number to n_max
+        // unless the second number is smaller than n_min
+        // if second number is 19, then n_min will become 19 since it was 20 previously and 19 > 20
+        if(n > n_max){
+            n_max = n;
+        }
+        
+        cout << n_min << " " << n_max << " \n";
+
+    }
+
+
+
+}
