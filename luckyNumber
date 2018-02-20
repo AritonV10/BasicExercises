@@ -1,0 +1,65 @@
+/**
+
+  *Exercise: a number is lucky if it's squared sum can be written as a sum of consecutive
+  *Print the consecutive numbers if the number meets the requirements, else print "Not lucky"
+  *Example: 7 * 7 = 4 + 5 + 6 + 7 + 8 + 9 + 10
+
+**/
+
+
+int Norocos(){
+
+    int n, sum, sum2;
+    cin >> n;
+    vector<int> v;
+    
+    // sum2 is assigned squared n
+    sum2 = n * n;
+
+    for(int i = 1; i <= 1000; i++){
+        sum = 0;
+        // checks if the vector is empty
+        // 
+        if(!v.empty()){
+            v.clear();
+        }
+        
+        // how this works
+        // if we have the number 3, 3 x 3 = 9;
+        // it stars from 1, so it checks
+        // 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9...+1000
+        // it adds the number into the sum everytime and it checks after every iterating
+        // so sum at the first iterating would be, sum = 1 -> sum = 3 - > sum = 6 etc
+        // and it adds the numbers into the array in case the sum is equal to sum2, so we have the numbers
+        // to make this faster, we could stop the iterating if the sum is bigger than sum2
+        // second iterating it starts from 2 -> 2 + 3 + 4 -> sum = 9; v={2, 3, 4}
+        // it enters the loop and it sets i and j to 1000 so we can get out of the loop
+      
+        for(int j = i; j <= 1000; j++){
+            // it adds j into the sum
+            sum += j;
+            // adds j into the array
+            v.push_back(j);
+                // checks if the sum is equals to sum2 (n^2)
+                if(sum == sum2){
+                    i = 1000;
+                    j = 1000;
+                }
+        }
+    }
+    
+    // it checks if the size of the array is smaller than 2
+    // it means it has just 1 element, then the number is not lucky
+    if(v.size() < 2){
+
+        cout << "NU ESTE NOROCOS";
+    } else {
+
+        for(int i = 0; i < v.size(); i++){
+        cout << v[i] << " ";
+        }
+    }
+
+
+
+}
