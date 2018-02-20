@@ -1,0 +1,39 @@
+/**
+
+  Exercise: Output the sum of S=1*2-2*3+3*4-...±n*(n+1).
+
+**/
+
+int main(){
+
+    int n, sum = 0, sum2 = 0;;
+    cin >> n;
+    int v[n];
+    size_t v_length = sizeof(v) / sizeof(int);
+
+    // add all the sums of i * (i+1) in the array
+    for(int i = 1; i <= n; i++){
+        v[i] = i * (i + 1);
+    }
+
+    // iterate throught the array by 2
+    for(int i = 1; i <= n; i += 2){
+        
+        // check if i + 1 is not null
+        // in our case if It's bigger than the array length
+        // add the result of the first 2 pairs in sum
+        // if the arrays length is odd, for example if it has 5 elements
+        // then it does the first 2 pairs (1,2) and (3,4)
+        // and adds the value of the 5th position in sum
+        if(i + 1 <= v_length){
+            sum = v[i] - v[i + 1];
+        } else {
+            sum = v[i];
+        }
+        
+        // add the result of sum
+        sum2 += sum;
+    }
+
+    cout << sum2;
+}
