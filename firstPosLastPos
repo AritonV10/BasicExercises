@@ -1,0 +1,43 @@
+/**
+
+  Exercise: calculate the sum between the first even number and the last even number in an array
+
+**/
+
+
+int main(){
+
+
+    int N, first_position = -1, last_position = -1, sum = 0;
+    cin >> N;
+    int v[N];
+
+    // add the number into the array
+    for(int i = 1; i <= N; i++){
+        cin >> v[i];
+    }
+
+    // iterates throught the array and stops when it finds the first even number
+    // because first_position is assign the position of the even number
+    // and it's no longer -1
+    for(int i = 1; i <= N && first_position == -1; i++){
+        if(v[i] % 2 == 0){
+            first_position = i;
+        }
+    }
+
+    // same like before, only it starts from the end of the array
+    for(int i = N; i >= 1 && last_position == -1; i--){
+        if(v[i] % 2 == 0){
+            last_position = i;
+        }
+    }
+    // starts from the first_position it found the even number
+    // to last_position of the even number and calculates all the numbers between these 2 positions
+    for(int i = first_position; i <= last_position; i++){
+        sum += v[i];
+    }
+
+    cout << sum;
+
+}
