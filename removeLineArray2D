@@ -1,0 +1,55 @@
+/**
+
+  Exercise: remove a given line in an 2D array
+
+**/
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int L, C, K;
+    cin >> L >> C >> K;
+    int v[500][500];
+    
+    // L = line 
+    // C = column
+    // K = the line we want to remove
+    
+    // add numbers into the array
+    for(int i = 1; i <= L; i++){
+        for(int j = 1; j <= C; j++){
+
+            cin>>v[i][j];
+        }
+    }
+
+    // the loop starts from the line we want to remove
+    // and switches all the elements from the current line with the next line
+    for(int i = K; i <= L; i++){
+        for(int y = 1; y <= C; y++){
+                int temp = v[i][y];
+                v[i][y] = v[i + 1][y];
+                v[i + 1][y] = temp;
+            }
+
+    }
+  
+    // after the loop has finished, means the line we want to remove is the last line
+    // decrement the line variable, which means removing the last line and all it's elements
+    L--;
+
+
+    // print the new array without the given line
+    for(int i = 1; i <= L; i++){
+        for(int j = 1; j <= C; j++){
+
+            cout << v[i][j] << " ";
+        }
+            cout << " \n";
+    }
+
+
+}
