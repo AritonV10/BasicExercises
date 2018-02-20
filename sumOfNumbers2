@@ -1,0 +1,21 @@
+/**
+
+  Exercise: calculate the sum of S=1*n+2*(n-1)+3*(n-2)+...+n*1.
+  Example: 4 -> 1*4 + 2*3 + 3*2 + 4*1 = 20
+**/
+
+int Expresie4(){
+
+    int n, p = 0, sum, sum2 = 0;
+    cin >> n;
+
+    for(int i = 1; i <= n; i++){
+        
+        sum = i * (n - p);
+        p++;
+        sum2 += sum;
+    }
+
+    cout << sum2;
+
+}
