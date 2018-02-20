@@ -1,6 +1,6 @@
 /**
 
-  *Exercise: a number is lucky if it's squared sum can be written as a sum of consecutive
+  *Exercise: a number is lucky if it's squared sum can be written as a sum of consecutive numbers
   *Print the consecutive numbers if the number meets the requirements, else print "Not lucky"
   *Example: 7 * 7 = 4 + 5 + 6 + 7 + 8 + 9 + 10
 
