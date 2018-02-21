@@ -7,7 +7,7 @@
 **/
 
 
-int Norocos(){
+int main(){
 
     int n, sum, sum2;
     cin >> n;
