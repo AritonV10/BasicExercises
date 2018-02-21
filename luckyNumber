@@ -52,7 +52,7 @@ int main(){
     // it means it has just 1 element, then the number is not lucky
     if(v.size() < 2){
 
-        cout << "NU ESTE NOROCOS";
+        cout << "Not lucky";
     } else {
 
         for(int i = 0; i < v.size(); i++){
