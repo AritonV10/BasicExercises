@@ -1,0 +1,64 @@
+/**
+  https://www.pbinfo.ro/?pagina=probleme&id=357
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int fun(int n, int b){
+
+    int number = (n < b ? n : b);
+    int diff = 0;
+
+    for(int i = number; i < (b > n ? b : n); i++){
+        diff += 1;
+    }
+
+    return diff;
+}
+
+bool exist(int arr[], int n){
+
+    size_t array_length = sizeof(arr) / sizeof(arr[0]);
+
+    for(int i = 1; i <= array_length; i++){
+        if(arr[i] == n){
+            return false;
+        }
+    }
+    return true;
+}
+int main(){
+
+    int n, pairs;
+    bool stop = false;
+    cin >> n;
+    int n_double = n * 2;
+    int v[n_double];
+
+    for(int i = 1; i <= n_double; i++){
+        cin >> v[i];
+    }
+
+    for(int i = 1; i <= n_double && !stop;){
+        int diff_i = fun(v[i], v[i + 1]);
+        for(int j = i + 2; j <= n_double; j += 2){
+            int diff_j = fun(v[j], v[j + 1]);
+            if(diff_i >= diff_j){
+                    pairs = (j + 1) - ((j+1)/2);
+                    i = j;
+                    break;
+
+            }
+            if(j == n_double - 1){
+                    stop = true;
+                    break;
+                }
+        }
+
+    }
+
+    cout << pairs;
+
+}
