@@ -1,0 +1,42 @@
+/**
+  https://www.pbinfo.ro/?pagina=probleme&id=561
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+int fun(int n, int m){
+    int sum = m;
+    int cioco = 0;
+    for(int i = 1; i<= n; i++){
+        if(sum < n){
+            sum += m;
+            cioco++;
+        }
+    }
+
+    return cioco;
+}
+
+int main(){
+
+   int bani, magazine, ciocolati = 0, mag;
+    cin >> bani >> magazine;
+    int v[magazine];
+
+    for(int i = 1; i <= magazine; i++){
+        cin >> v[i];
+    }
+
+    for(int i = 1; i <= magazine; i++){
+        int j = fun(bani, v[i]);
+        if(j > ciocolati){
+            ciocolati = j;
+            mag = i;
+        }
+    }
+
+    cout << ciocolati << " " << mag;
+}
