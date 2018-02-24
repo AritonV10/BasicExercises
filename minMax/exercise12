@@ -1,0 +1,55 @@
+/**
+  https://www.pbinfo.ro/?pagina=probleme&id=358
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+int fun(int n, int b){
+
+    int number = (n < b ? n : b);
+    int diff = 0;
+
+    for(int i = number; i < (b > n ? b : n); i++){
+        diff += 1;
+    }
+
+    return diff;
+}
+
+int main(){
+
+   int plopi, n, m, diff_p = -1, plop = 0;
+   cin >> plopi;
+   int v[plopi];
+   for(int i = 1; i <= plopi; i++){
+        cin >> v[i];
+   }
+
+   v[plopi + 1] = NULL;
+
+    size_t myArray = sizeof(v) / sizeof(v[0]);
+   for(int i = 1; i <= plopi; i++){
+     int diff = fun(v[i], v[i+1]);
+
+        if(v[i + 1] != NULL){
+            if(diff > diff_p){
+                diff_p = diff;
+    
+            }
+        }
+   }
+
+   for(int i = 1; i <= plopi; i++){
+        int diff = fun(v[i], v[i+1]);
+        if(v[i + 1] != NULL){
+            if(diff == diff_p){
+                plop++;
+            }
+        }
+   }
+
+   cout << diff_p << " " << plop;
+}
