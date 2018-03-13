@@ -1,0 +1,39 @@
+/*
+  https://www.pbinfo.ro/?pagina=probleme&id=290
+*/
+
+
+#include <iostream>
+bool fun(int m, int n){
+
+ 	if(m >= n)
+        return true;
+
+    return false;
+}
+
+int main()
+{
+    int n, numar, nr = -10000;
+    bool sortat = true;
+    std::cin>>n;
+
+    for(int i = 1; i <= n; i++){
+        std::cin>>numar;
+        if(sortat){
+            if(numar % 2 == 0){
+                if(fun(numar, nr)){
+                    sortat = true;
+                } else {
+                    sortat = false;
+                }
+                nr = numar;
+            }
+        }
+    }
+
+    if(sortat)
+        std::cout<<"DA";
+    else
+        std::cout<<"NU";
+}
