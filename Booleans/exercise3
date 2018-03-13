@@ -1,0 +1,41 @@
+/*
+  https://www.pbinfo.ro/?pagina=probleme&id=291
+*/
+
+
+bool fun(int n){
+    
+    static int counter = 0;
+    
+  	if(n == 0 && counter % 2 == 0)
+        return true;
+    else if(n == 0 && counter % 2 != 0)
+        return false;
+        
+  	counter++;  
+    return fun(n/10);
+}
+
+int main(){
+    
+ 	int n;
+    bool numar = true;
+    std::cin>>n;
+    int v[n];
+    
+    for(int i = 1; i <= n; i++){
+        std::cin>>v[i];
+ 
+    	if(numar)
+            if(fun(v[i]))
+               numar = true;
+            else
+               numar = false;
+    }
+               
+    if(numar)
+    	std::cout<<"DA";
+    else
+        std::cout<<"NU";
+         
+}
