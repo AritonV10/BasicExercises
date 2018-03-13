@@ -1,0 +1,41 @@
+/*
+  https://www.pbinfo.ro/?pagina=probleme&id=292
+*/
+
+
+#include <iostream>
+bool fun(int n, int number){
+    
+    static int num = n;
+    
+    if(n == number)
+        return true;
+    if(n > number)
+        return false;
+    
+    return fun(n+num, number);
+}
+
+
+int main(){
+    
+    int n;
+    bool isMultiple = true;
+    std::cin>>n;
+    int v[n];
+    
+    for(int i = 1; i <= n; i++){
+        std::cin>>v[i];
+    }
+    
+    for(int i = 1; i < n && isMultiple; i++){
+        if(isMultiple){
+        	if(fun(v[n], v[i])) {continue;}
+            else {isMultiple = false;}
+        }   
+    }       
+    
+    if(isMultiple) { std::cout<< "DA";}
+    else {std::cout<<"NU";}
+    
+}
