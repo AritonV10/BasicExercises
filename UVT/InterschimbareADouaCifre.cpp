@@ -41,7 +41,7 @@ int swap_num(int number, int a, int b){
         else if(_count == a) 
             _mirror = _mirror*10+closer_to_end;
         else 
-             _mirror = _mirror*10+last;
+            _mirror = _mirror*10+last;
      
         _count++;
         number /= 10;
