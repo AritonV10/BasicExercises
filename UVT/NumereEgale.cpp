@@ -10,8 +10,6 @@ int dig(int n){
 }
 
 int bigger(int n, int m){return n > m ? n : m;}
-
-
 int smaller(int n, int m){return n < m ? n : m;}
 
 bool fun(int n, int m){
