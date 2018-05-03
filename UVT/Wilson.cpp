@@ -4,6 +4,8 @@ int func(int p){
     if(p == 0) return 1;
     return p * func(p-1);
 }
+
+// is prime if (n-1)! + 1 is divizible by n
 bool wilson(int n){
     if((func(n-1)+1)%n==0)
         return true;
