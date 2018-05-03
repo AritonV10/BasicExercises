@@ -12,7 +12,6 @@ bool func(const int* n, const int* _p){
     }
     return false;
 }
-
 int main(){
     int x = 30, f = 34;
     int* _p = &x;
