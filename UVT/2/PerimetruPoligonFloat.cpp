@@ -1,3 +1,6 @@
+#include <iostream>
+#include <cmath>
+
 struct Pereche{
     float x;
     float y;
