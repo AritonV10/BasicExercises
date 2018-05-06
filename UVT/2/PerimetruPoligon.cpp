@@ -1,4 +1,5 @@
 // (fara float) perimetru P1(2,5)P2(1,4)P3(1,2)P4(2,1)P5(5,1)P6(8,1)P7(9,3)P8(8,5)P9(5,5)
+// afiseaza "RADICAL" daca numarul nu ii patrat perfect -> nr1, nr2, nr3(RADICAL)
 enum Radical {
     RADICAL,
     NON_RADICAL
