@@ -18,14 +18,12 @@ bool is_equal(int k, int a){
 }
 int func(int a, int k){
     int nr_apariti = 0;
-    for(int i = a; i <= k; i++){
+    for(int i = a; i <= k; i++)
         if(is_equal(i, a)) nr_apariti++;
-    }
     return nr_apariti;
 }
 
 int main(){
-
     std::cout<<func(2, 100);
 }
 
