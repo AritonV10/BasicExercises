@@ -1,3 +1,5 @@
+/* https://www.pbinfo.ro/?pagina=probleme&id=43 */
+
 #include <iostream>
 
 int power(int k, int p){
@@ -16,7 +18,6 @@ int dig(int k){
 
 double nreal(int n, int k){
     int s_dig = dig(k), s_z = power(s_dig, 1), x = (n * s_z) + k, x_cif = dig(x);
-
     return (double) x / s_z;
 }
 
