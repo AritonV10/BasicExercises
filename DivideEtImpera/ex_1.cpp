@@ -11,7 +11,7 @@ int first_half(int arr[], int st, int d){
     else if(st == d) return arr[st];
     return first_half(arr, st, (d/2)) + first_half(arr, st+(d/2), d);
 }
-int num(int n, int arr[]){
+int divide(int n, int arr[]){
    return combine(first_half(arr, 1, (n/2)), second_half(arr, (n/2)+1, n));
 }
 
@@ -21,5 +21,5 @@ int main(){
     int arr[n];
     for(int i = 1; i<=n; i++)
         std::cin>>arr[i];
-    std::cout<<num(n, arr);
+    std::cout<<divide(n, arr);
 }
