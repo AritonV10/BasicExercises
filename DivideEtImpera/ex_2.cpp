@@ -4,10 +4,10 @@
 bool has_odd_numbers = false;
 int func(int arr[], int _start, int _sfarsit){
     // 1, 2, 4, 3, 4, 5 6, 7, 8, 9, 10-> n/2-1 -> 1, 2, 3, 4, 5 (0, 1, 2, 3, 4)
-    if(_start+1==_sfarsit) { return arr[_start] + arr[_sfarsit];}
-    else if(_start == _sfarsit) { return arr[_start]; }
-    if(_start==0){ return func(arr, _start, _sfarsit/2) + func(arr, _start+((_sfarsit/2)+1), _sfarsit); }
-    else { return func(arr, _start, _sfarsit-2) + func(arr, _start+(_sfarsit%2==0 ? 1 : 2), _sfarsit); }
+    if(_start+1==_sfarsit) return arr[_start] + arr[_sfarsit];
+    else if(_start == _sfarsit) return arr[_start];
+    if(_start==0) return func(arr, _start, _sfarsit/2) + func(arr, _start+((_sfarsit/2)+1), _sfarsit); 
+    else return func(arr, _start, _sfarsit-2) + func(arr, _start+(_sfarsit%2==0 ? 1 : 2), _sfarsit); 
 }
 bool combine(int first_half, int second_half){
     if((first_half + second_half) % 2 != 0) return true;
