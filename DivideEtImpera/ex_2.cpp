@@ -1,7 +1,6 @@
 /* https://www.pbinfo.ro/?pagina=probleme&id=1148 */
 
 #include <iostream>
-bool has_odd_numbers = false;
 int func(int arr[], int _start, int _sfarsit){
     // 1, 2, 4, 3, 4, 5 6, 7, 8, 9, 10-> n/2-1 -> 1, 2, 3, 4, 5 (0, 1, 2, 3, 4)
     if(_start+1==_sfarsit) return arr[_start] + arr[_sfarsit];
