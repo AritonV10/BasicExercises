@@ -17,8 +17,9 @@ int first_half(int arr[], int _start, int _sfarsit){
     }
     return first_half(arr, _start, _sfarsit/2) + second_half(arr, (_sfarsit/2)+1, _sfarsit);
 }
+int combine(int first_half, int second_half) { return first_half + second_half; }
 int has_odd(int n, int arr[]){
-    return first_half(arr, 0, (n/2)-1) + second_half(arr, n/2, n-1);
+    return combine(first_half(arr, 0, (n/2)-1), second_half(arr, n/2, n-1));
 }
 int main(){
     int n;
