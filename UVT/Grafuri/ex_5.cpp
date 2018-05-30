@@ -7,23 +7,17 @@
 std::ifstream fin("graf_partial_2.in");
 std::ofstream fout("graf_partial_2.out");
 
-
 int gradesHelper(int arr[][1000], int length){
     int _b = -1;
     for(int i = 1; i <= length; i++){
         int s = 0;
-        for(int j = 1; j <= length; j++){
-            if(arr[i][j] != 0){
-                s++;
-            }
-        }
+        for(int j = 1; j <= length; j++)
+            if(arr[i][j] != 0) s++;              
         if(s > _b) _b = s;
     }
     return _b;
 }
-int grades(int arr[][1000], int& length){
-    return gradesHelper(arr, length);
-}
+int grades(int arr[][1000], int& length){ return gradesHelper(arr, length); }
 void removeConnection(int arr[][1000], int& line, int& _b){ arr[line][_b] = 0; arr[_b][line] = 0; }
 void checkConnection(int arr[][1000], std::vector<int>& _vec, int& length, int line, int& _b, int& _count){
     for(int i = 1; i <= length; i++){
