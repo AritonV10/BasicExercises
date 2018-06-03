@@ -33,11 +33,9 @@ void func(int*v, unsigned v_size){
     do{
          _pos = findSmallest(v, v_size);
         if(_pos){
-
             int b_num = v[_pos+1], b_cop = b_num, b_pos=_pos+1;
-            for(int i = _pos + 1; i <= v_size; i++){
+            for(int i = _pos + 1; i <= v_size; i++)
                 if(b_num > v[i] && v[i] > v[_pos]) { b_num = v[i]; b_pos = i; }
-            }
             if(b_cop == b_num) swap_elements(v, _pos, _pos+1);
             else swap_elements(v, _pos, b_pos);
             sort_array(v, v_size, _pos+1);
