@@ -24,12 +24,6 @@ void swap_elements(int_vector& _vec)
     for(vector_iterator it = _vec.begin(); it != _vec.end() - 1; it++)
         swap_helper(it, it+1);
 }
-void display(int_vector _vec)
-{
-    for(vector_iterator it = _vec.begin(); it != _vec.end(); it++)
-        std::cout<< *it << " ";
-    std::cout<<std::endl;
-}
 void reverse_elements(int_vector& _vec)
 {
     vector_iterator _begin = _vec.begin(), _end = _vec.end();
